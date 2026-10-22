@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard Standar dan Prosedur FPsi UNTAR</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--tx:#1b2430;--mu:#6b7686;--bd:#dfe3ea;--ac:#1f5fbf;--acbg:#e8f0fc;--ok:#16794a;--wr:#8a5a00;--wrbg:#fff3d6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b222b;--tx:#e8ecf2;--mu:#98a3b3;--bd:#2d3744;--ac:#6ea3f0;--acbg:#1f2e47;--ok:#5fd09a;--wr:#f0c060;--wrbg:#3a2f14}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b222b;--tx:#e8ecf2;--mu:#98a3b3;--bd:#2d3744;--ac:#6ea3f0;--acbg:#1f2e47;--ok:#5fd09a;--wr:#f0c060;--wrbg:#3a2f14}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:1200px;margin:0 auto;padding:18px 16px 40px}
+h1{font-size:22px;margin:0 0 2px}.sub{color:var(--mu);margin:0 0 14px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+input,button,textarea{font:inherit;color:var(--tx)}
+input[type=search],.ed input{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;min-width:0}
+#q{flex:1;min-width:200px}
+button{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--ac)}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{border-radius:999px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.st{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px 14px}
+.st b{display:block;font-size:20px}.st span{color:var(--mu);font-size:12px}
+.pr{height:6px;background:var(--bd);border-radius:9px;overflow:hidden;margin-top:6px;min-width:120px}.pr i{display:block;height:100%;background:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;align-items:start}
+@media(max-width:420px){.grid{grid-template-columns:1fr}}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+summary{cursor:pointer;padding:12px 14px;font-weight:600;display:flex;gap:8px;justify-content:space-between;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary small{font-weight:400;color:var(--mu);white-space:nowrap}
+.bd{padding:0 14px 12px;border-top:1px solid var(--bd)}
+ul{list-style:none;margin:8px 0 0;padding:0}
+li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--bd)}
+li:last-child{border:0}
+li.g{font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.03em;border:0;padding:10px 0 2px}
+.t{flex:1;min-width:0}
+a.go{background:var(--acbg);color:var(--ac);border-radius:6px;padding:3px 9px;text-decoration:none;font-size:13px;white-space:nowrap}
+a.go.big{display:inline-block;margin-top:10px;padding:6px 12px}
+.no{background:var(--wrbg);color:var(--wr);border-radius:6px;padding:3px 9px;font-size:12px;white-space:nowrap}
+li.ed{flex-wrap:wrap}.ed input{padding:5px 8px;font-size:13px}
+.ed .ig{width:100%}.ed .it{flex:1 1 180px}.ed .iu{flex:1 1 180px}
+.x{padding:3px 8px;color:#c0392b}
+.add{margin-top:8px;font-size:13px;color:var(--ac)}
+.hd{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.hd input{flex:1 1 160px}
+.empty{color:var(--mu);padding:30px;text-align:center}
+.w{--tc:#1f5fbf}
+.tabs button.on{background:var(--tc);border-color:var(--tc);color:var(--on,#fff)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid rgba(255,255,255,.7)}
+details{background:color-mix(in srgb,var(--tc) 12%,var(--card));border-color:color-mix(in srgb,var(--tc) 40%,var(--bd))}
+summary{background:var(--tc);color:var(--on,#fff)}
+summary small{color:var(--on,#fff);opacity:.85}
+a.go{background:color-mix(in srgb,var(--tc) 15%,transparent);color:color-mix(in srgb,var(--tc) 75%,var(--tx))}
+.st{background:color-mix(in srgb,var(--tc) 14%,var(--card));border-color:color-mix(in srgb,var(--tc) 40%,var(--bd))}
+.pr i{background:var(--tc)}
+li.g{color:color-mix(in srgb,var(--tc) 75%,var(--tx))}
+.cl{display:flex;align-items:center;gap:6px;color:var(--mu);font-size:13px}
+.cl input{width:38px;height:32px;padding:0;border:1px solid var(--bd);border-radius:6px;background:var(--card);cursor:pointer}
+dialog{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:12px;width:min(640px,92vw)}
+dialog textarea{width:100%;height:260px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;font:12px monospace}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>Dashboard Standar dan Prosedur FPsi UNTAR</h1>
+<p class="sub">Cari standar atau prosedur, lalu klik <b>Buka</b> untuk menuju dokumennya. <a class="go" href="https://drive.google.com/drive/folders/12VNWAs-3Zwlm7DbgNR8fIwTep2JVhxKd" target="_blank" rel="noopener">Buka folder induk ↗</a></p>
+<div class="bar">
+<input type="search" id="q" placeholder="Cari bidang, standar, atau prosedur…">
+<label class="cl">Warna blok<input type="color" id="tc"></label>
+<button id="be">✎ Mode Edit</button>
+<button id="bk">Backup / Restore</button>
+</div>
+<div class="tabs" id="tabs"></div>
+<div class="stats" id="stats"></div>
+<div class="grid" id="grid"></div>
+<button class="add" id="ab" style="display:none">+ Tambah Bidang</button>
+</div>
+<dialog id="dlg">
+<p><b>Backup / Restore</b><br><small>Salin teks di bawah untuk menyimpan data. Untuk memulihkan, tempel data lalu klik Terapkan.</small></p>
+<textarea id="ta"></textarea>
+<p style="display:flex;gap:8px;flex-wrap:wrap"><button id="cp">Salin</button><button id="ap">Terapkan</button><button id="sd">Data awal</button><button id="cl">Tutup</button></p>
+</dialog>
+<script>
+const K="dash_fpsi_v5";
+const TL=["3. Strategi Pencapaian Standar","4. Strategi Penanganan Ketidaktercapaian Standar","5. Pihak Terkait","6. Dokumen Terkait","7. Referensi"];
+const G=(g,...a)=>a.map(x=>g+"|"+x);
+const N=(g,p,...a)=>a.map((x,i)=>g+"|"+p+(i+1)+" "+x);
+const DI=(n,p="Persyaratan Standar & Indikator")=>[n+" – Definisi",n+" – "+p];
+const I2="2. Isi Standar",R1="1. Rasional Standar";
+const B=(n,a)=>({n,u:"",items:a.flat().map(s=>{const k=s.indexOf("|");return k<0?{g:"",t:s,u:""}:{g:s.slice(0,k),t:s.slice(k+1),u:""}})});
+const K3=["Luaran","Proses","Masukan"];
+const RS=x=>B(x,[R1,G(I2,...DI("2.1 Standar Luaran "+x),...DI("2.2 Standar Proses "+x),...DI("2.3 Standar Masukan "+x)),
+G("3. Strategi Pencapaian Standar",...K3.map((k,i)=>"3."+(i+1)+" Strategi Pencapaian Standar "+k+" "+x)),
+G("4. Strategi Penanganan Ketidaktercapaian Standar",...K3.map((k,i)=>"4."+(i+1)+" Strategi Penanganan Ketidaktercapaian Standar "+k+" "+x)),
+G("5. Pihak Terkait",...K3.map((k,i)=>"5."+(i+1)+" Pihak Terkait Standar "+k+" "+x)),"6. Dokumen Terkait","7. Referensi"]);
+const L=(n,s)=>B(n,[R1,G(I2,...DI(s)),TL]);
+const F=a=>a.map(([t,id])=>({g:"",t,u:"https://drive.google.com/file/d/"+id+"/view"}));
+const BD=(n,id,items=[])=>({n,u:"https://drive.google.com/drive/folders/"+id,items});
+const seed=()=>[
+{id:"pd",c:"#7a3fb0",name:"Dokumen Peraturan Dekan",b:[]},
+{id:"st",c:"#16794a",name:"Dokumen Standar",b:[BD("AKADEMIK · 04. Pengelolaan Pembelajaran","11qP3vjYGZrpt2H-wdnU2aAUu6WA-phnK",F([["Bebas Perpustakaan","1c2pAjxk2si2vY8fxlWCvlBenn57O0bzb"],["Evaluasi Kepuasan Pelanggan","1ruJxXI8GzESw12MpugkEccRkNOcjWKGD"],["Evaluasi Pengukuran Kinerja Perpustakaan","1Ak1bEaSXQwGonKvaU_ySo48MvaWe-cFm"],["Kalibrasi dan Verifikasi Alat Laboratorium (FK)","1KJfsr6Sn9EyGQ_Pxdewsgelln8b4gkhx"],["Kehilangan Ijazah","11XiVw6BClCAtB-kzrii25RRC89KH9WnL"],["Legalisasi Ijazah Baru","11vez7sTwoswy2rhvcO4Ov4klObXBwpHW"],["Legalisasi Ijazah Lama","1Phftq156Ydtz7yCJ8LzrQYCNo_qmpbg3"],["Legalisir Transkrip","1CchcC8vMp5TuN_PPCdxpwCbvPFXRPsDl"],["Mahasiswa Pindah Internal atau Eksternal","1hBJRvSuplJe6OCqw6IDg_5k9GRDLsMla"],["Mahasiswa Pinjam Berkas","1POAJRU3-JDhfQOsNL-cPgn_7wL-EouPR"],["Mundur Mata Kuliah","160-f1xcpw5LKhGnmIxpKiRBGtkMbTKVq"],["Pelayanan Permintaan Surat Survei dan Perolehan Data","1Kr9KhhsDgdyzZR72SQu10BRmbONJXUHx"],["Pelayanan Sanksi","15zbzcpSZgw9p-UPLleXSHwITcMcnlB7P"],["Pelayanan Sanksi (PERPUS FPSI)","1DIp6tc2Xme9tfq7rwzk4rIAjW8NGXSBe"],["Pemberian Kode Mata Kuliah","1-gExKCBVFsxOEJudiRWnKz-y-GR4c7VC"],["Pemberitahuan Hasil Studi Mahasiswa (FK)","1P0Kjd9kMRWx7kv1toTWjHhVx-WmCo0JH"],["Pembuatan Buku Panduan Akademik","1cOa4rMScEY8b_sUuIYx1_yZB_Zdp2QHE"],["Pembuatan Surat Keterangan Verifikasi Ijazah","1akzLAe1MGxNe3vF_qoUE81vj_ClHRiJ1"],["Peminjaman Buku","1CZprdQ2143RQFR-tlbLzgcWxVSuIs3BW"],["Pemusnahan Ijazah Yang Salah Cetak","19M12mAvq_kSGzVP--8uuGIK0I6LDkoGW"],["Pemusnahan Ijazah Yang Salah Cetak (salinan)","1toegQWKk7uc3iBNXvg6zD2J6DFQJxLwy"],["Penandatangan Transkrip Nilai Lampiran Ijazah","15mo_YnoShPiGwnlmyaecirYXFc0s72RX"],["Penandatanganan Ijazah","1N5srHnOOljYd6Eos7dL7N3zVqFoYsEb5"],["Penanganan Mahasiswa Terancam DO","1svZSmvh85tohvFW89Oxwxk5cH4Bs4TrG"],["Penawaran dan Jadwal Mata Kuliah","1VuBeMSaVBmJCiQy8eQbP1tptmfMum4iR"],["Penawaran Program","1y6IF6TxWPVPTfdmTELWxC6R6nGIjGghP"],["Pencetakan Ijazah","1-Koc7R5xK_ByKc0pe_BDp6Yj5HGezYOG"],["Pencetakan Lampiran Ijazah","191CIDQ6ap_zNmPjo639epRmfZjLFYgGy"],["Penentuan Dosen Pengampu","1IQPk3FOmLQYiiiqcP_h7S3YT0mkKOmLq"],["Penerbitan SK Dekan tentanf Pemberian Yudisium","1h-npr8_4QMYDb2fS-634QQfl98jdZGYQ"],["Penerimaan Mahasiswa Baru Pascasarjana","1n3j1Q0_-GNvzs2FmJmJP7mZkC2-qEXqN"],["Penerimaan Mahasiswa PPA dan MAKSI","15INm913YiPOFdP9S1iCY07QlLWU88vVc"],["Penetapan Dosen Koordinator","14mJnwkLv0ptqvaNFwEd3lHuc5BNEl3j0"],["Penetapan Dosen MKU","1UfVyO117ApnHfX4f3wnhKqBl72Qz8D1X"],["Pengadaan Bahan Pustaka","1UF3s3Oe5Gd00eVYQGM-ay6KuO37do0J5"],["Pengajuan Cuti Akademik","1kmw8Gn-GZ75Kx1MoBSJSXSFdX_7OTQUb"],["Pengambilan Ijazah","1m8gpS5WmrdlHzB1QzxBMYz8FCZhWX_wZ"],["Pengarsipan Berkas","18lG8EQ8VLng2cTBeuGw-7w02s7Qk27OU"],["Pengelolaan Alat dan Bahan Laboratorium (FK)","1VajFWw2r_gkmLs-1ecJVjYRagrCMMh-j"],["Pengelolaan K3 Laboratorium (FK)","1HEUrxxWbazer3cE4O7C5DcQKOrqHHZFc"],["Pengelolaan Pelatihan di Laboratorium Komputer (FE)","1U4ZflZgd8Eig9mccatdClOZTWuwXJ6CZ"],["Pengelolaan Pelatihan di Laboratorium Komputer (FE) (salinan)","1Wm4Jt7enX087vo7xLpuQbi3eZzs_ad2H"],["Pengelolaan Pembelajaran","1xDZGwKOvJyEB82--pP9FZMGnTfIQ-PvQ"],["Pengelolaan Pembelajaran (BAA)","1XotQDv2vLOU5nmFVwDGVX6uGMlDMzbDp"],["Pengembalian Buku","1U56S0EBZ88UkVc-ykFxzPqO_ObXYJqxk"],["Penghapusan Mata Kuliah","1CLI0f8LfLkeuf_IdLOVOSlosRk3YIUJ_"],["Pengolahan Bahan Pustaka","1ukXNI3U8J5Ykhc9P8Mikx7uublo1FsPi"],["Penyerahan Tugas Akhir Mahasiswa (Perpus)","1j5LWYbydwpOa7hOBWWEFIc98P51Cqtj4"],["Penyusunan Jadwal Penggunaan Ruang Kuliah","1Ozf3iacir7JZYdwCglV0uxfujfqP6kj-"],["Penyusunan Jadwal Perkuliahan","1-0R0b2S1LetasbL2_nkeybs9_88iHiBX"],["Perbaikan Jadwal Perkuliahan dan KSM","1Q0i5e4pTF2zAlYOnomT9DpzzW4XktBJi"],["Perekrutan dan Pengangkatan Asisten Mahasiswa","1K1RXqnfTkzX3M7K9ojmIh2ukua0A8UM6"],["Perencanaan Perkuliahan dan Formasi Dosen MKU","1T4eWANUdZBogVHechkRlug5qkTCBIysg"],["Permintaan Data","1Bg_dBhi1lbaeivaep2nbUrxIAeCOAnaK"],["Permohonan Kunjungan ke Perpustakaan FE (PPA dan MAKSI)","1kv4euO3h2QakIe46gw6OPYVdHC-JM_-8"],["Persiapan Perkuliahan Laboratorium (FE)","1c7ApKouCo_ruD0mkyp_aRdiLB2e3qjpp"],["Promosi PPA dan MAKSI (FE)","1RHEuJ2X5zSLupcfHtqm_B5WrCzdJhi7X"],["Proses Administrasi Surat Akademik","1_4037jio8J7SkQE0NT-hjsVWFWRvHxxf"],["Proses Kuliah Pengganti","1mZ4YsNlABpPcSUbNSOu2seN1yiMLOsZ8"],["Proses Nomor Induk Mahasiswa dan Update Biodata (salinan)","1FF_Xh3pw4YtEGBY3jKCztg7NuujbkKb2"],["Proses Pengelolaan Jurnal (FK)","1Bwx6-sFlh0awjCshAqWp4WydLkQP-wSU"],["Proses Pengiriman Data Ijazah ke Biro Adak","1DYWjypCRIFup6cgNsHGG5n1mJs5XjrRM"],["Proses Pengiriman Data Ijazah ke Biro Adak (salinan)","1wFowMYN7QURuquhbqE9sDf1vj_5yEt48"],["Proses Pergantian Dosen atau Dosen Tamu","1yQ-icBgCyoD3kAaFmhIlYDNPuRA5gxwL"],["Proses Permohonan Pengurusan Ijazah","1FMHM_vBkAP8sre62QWRDDg6jprfmJerl"],["SK Penguji Doktor","1978Qc_GG8-avwR9wmCEm7J9DWtLciIKR"],["Standarisasi Format Slide Presentase Materi Perkuliahan","18y6YMTcncsFnVd3bt39I5QGz4Ee3kxD0"],["Undur Diri Mahasiswa","15ZqALwV0hpWQuPItY2APp_GRygjDP2vd"]])),
+BD("AKADEMIK · 05. Penilaian Pembelajaran","1jBk9bJox-VpM9G_A8UtPA3QoGJaKTkgR",F([["Pelaksanaan Ujian Keterampilan Dasar (Klinik Dasar OSCE) (FK)","11ZjTIcQPXn3URjkK2PyJIkFlaxZ_Yejc"],["Pelaksanaan Ujian(MKU)","1W3hJJHluyNK6dh5EfpFG04kWvsyJB3RO"],["Pelaksanaan UK MPPD (Uji Kompetensi Mahasiswa Program Profesi Dokter)","1HyBdGRMc2n_FqwgqQ_bAq4bYucvCA8ts"],["Pengolahan Nilai Ujian (MKU)","123Z9Q4uPC_fZASkbP4DS-fyuTcnvfxvr"],["Penilaian Magang atau Kerja Praktek","1kTOJs9bmQ9iEjsN8sxz0Ix1SAb-987-K"],["Penilaian Pembelajaran","166XhkjwrgK6E7gCOtMHt8NapOAJhuXjx"],["Penilaian PKPP UTS dan UAS (FPSI)","1sCTyximY68ljS9EuSb0m0xdAz911Dvzx"],["Penyusunan dan Pelaksanaan Sidang Proposal Skripsi","1nL9xZm5MZsqS0DbCIhgKSMVjuFikqakr"],["Persiapan Soal UTS atau UAS","1OhVgpMTNGeFUnRZXkdldf7BiXXKSfZSd"],["Persiapan Ujian UTS atau UAS","1jyBVhD6eq09nTCpl5tEvpLME9yhn8j8P"],["Proses Nilai dan Kartu Hasil Studi (KHS)","19EvgskdzY4ErHGRvbzfHZxNSla7a5-nH"],["Proses Pengolahan dan Penyerahan Nilai","19jxc6xuVbrfXAvLc4W9I0oMInJDrQXIv"],["Seminar Hasil Penelitian Disertasi","1RImAxBqDwkpsGULoPpGNf-iYFwissnsj"],["Sidang Proposal Disertasi","1aFUJUhgs3UqdMFLoq7FjymsrmgJ43V-3"],["Sidang Proposal Disertasi (salinan)","1ZFQ5UKmdsFD7UexuBC1SBKzpUUr-ESS7"],["Sidang Proposal Tesis atau Seminar Hasil Penelitian","11YmizLTE4LvY1ieYFZWwLbTrQZnqcIdY"],["Sidang Skripsi atau Tugas Akhir","1DufghaJUz6vkWlZdGZWHmWbhsuCRK5Du"],["Sidang Terbuka (Promosi Doktor)","1AeJT-x5sjBe8EVpjl4zJRc-KNCP3rPmD"],["Sidang Tertutup (Disertasi)","1IGIAhXcR3_3oNfoUHefg_pOty-Kw_uIn"],["Sidang Tesis","1DE8KLsFW2gLJzqszYLRKO16ORghe7PAZ"],["Ujian HIMPSI (FPSI)","1io4pOUIBje95B9-fnlhxcDwrYtRjO0kh"],["Ujian Tulis (FK)","1irQTrW1Pq1wxx4zvW6esgYnf7EiJK_4Y"],["Ujian UTS atau UAS","1CosqVjWeuTakZiJIeZQ_3Kzsxz2PSBYf"]])),
+BD("NON AKADEMIK · 06. Pembiayaan Pembelajaran","1PXeiznFVleDY8A8R8Yv-KXQ8fnLBK2ej",F([["Pembiayaan Pembelajaran","1r_TNWysgNoV-04v7ZDNhKtL_suHnF864"]])),
+BD("NON AKADEMIK · 07. Dosen & Tendik","1DoyyPg6-3aFwvoTXFiOHLkmRl-xCJmhP",F([["Dosen dan Tenaga Kependidikan","1S34PUAzx9t32bX5VBou50ubpBUMCpZ4y"]])),
+BD("NON AKADEMIK · 08. Sarana & Prasarana","1j9zkdPU5_9Di2E9e9bxkv4Et3AJJstxg",F([["Sarana dan Prasarana Pembelajaran","19wFkH-EiZmqkXRmtjYnSJKFFhIwlSdZW"]]))]},
+{id:"pr",c:"#1f5fbf",name:"Dokumen Prosedur",b:[BD("AKADEMIK · 03. Proses Pembelajaran","1cRXCt_0nqiyXVM2zXIvyhPcvNfHJUnYD",F([["Diskusi Pleno (FK)","1u4S6HkxPc_L5sFACbfZ-hxzP9Aquh4qY"],["Kerja Praktek atau Magang","1Z3MtIPqD11zG5QuBip86ZN2dyQk1jGrh"]])),
+BD("AKADEMIK · 04. Pengelolaan Pembelajaran","11qP3vjYGZrpt2H-wdnU2aAUu6WA-phnK",F([["Bebas Perpustakaan (salinan)","1eXnxIFFdZyI6hXLG4GyQASwdOM4N5qms"],["Evaluasi Kepuasan Pelanggan","1jRVCF0lgQFsAJqyyCPLQ4v80J9K8AkkY"],["Evaluasi Pengukuran Kinerja Perpustakaan","11sh5hjoUjILQMcMEAKLw8Tx9hg4dhMKl"],["Kalibrasi dan Verifikasi Alat Laboratorium (FK)","1gk7Sy9LwMrsSM2v10pMeqmrEZBpJEs-D"],["Kehilangan Ijazah","195gqVsrk3A4NnuVDzD0VucDFB7h6Icvk"],["Legalisasi Ijazah Baru","1X-iKYC6yx1phqBMvUS9MK3lXuTmaAlGp"],["Legalisasi Ijazah Lama","1gwSpWKgNOvHyg9dLmV2Dxszv62Qmuwif"],["Legalisir Transkrip","1P2Uzusi85cSGu51CVr-v3dM3g3hfr9Ot"],["Mahasiswa Pindah Internal atau Eksternal","1jDR51CWPzyYf1oFC81w3y-9q3fiPUARb"],["Mahasiswa Pinjam Berkas","1auCnFw1abzGZy2xPWeMNS2iGxId1Oi9Z"],["Monitoring Implementasi RPS","1lH50Y-wwNkd8aPz1_eIW8PXLhX5dAseP"],["Mundur Mata Kuliah","1BM3H0hh2yAQAxAqXiIBxWuMs_nAQT9qs"],["Pelayanan Permintaan Surat Survei dan Perolehan Data","1aw-Zo3CnOILO2Cej6H57SVzB7I-UdVd9"],["Pelayanan Sanksi","1gdIBd9vrwNa4b1-7YUBNyaZAuzqtGPei"],["Pelayanan Sanksi (PERPUS FPSI)","1J8SFLbYF6eix4WvAcqfbdBpb8Gt37llT"],["Pemberian Kode Mata Kuliah","1zUQG41JUMRcpMUti8cbv1Hg7be9d308U"],["Pemberitahuan Hasil Studi Mahasiswa (FK)","1QjkxvBatz9YOAe9D2IzCuBD5ZIL06kKv"],["Pembiayaan Pembelajaran","1mG_KkfL3Ue105OOusZr4xsHQ-gnGbALG"],["Pembuatan Buku Panduan Akademik","1BQGbRB3HegvcETWgNQ0hiLJLdPiINZn_"],["Pembuatan Surat Keterangan Versifikasi Ijazah","1oKr9X7_vtbImVUyhf63LdWVdgrDRCEj2"],["Peminjaman Buku","1jHjCepiZWNnI1-uMK5YmFGx9sbVrrlnp"],["Pemusnahan Ijazah Yang Salah Cetak","13hbNASddit_9k2jpu2JY7nOsQVSX1yLC"],["Pemusnahan Ijazah Yang Salah Cetak (salinan)","17fl7blnOmcORQp0eg659t3gcU9bwErwZ"],["Penandatanganan Ijazah","18JA9e7dzhDKGVKOZkm7ECmpBhrpf9XA1"],["Penandatanganan Transkrip Nilai Lampiran Ijazah","1AMiObubL72o1yRdlM7gb_jU_yT41whN3"],["Penandatanganan Transkrip Nilai Lampiran Ijazah (salinan)","1hQIjLecna49mmc9Yc_gPRXZO87TGJ8Ir"],["Penanganan Mahasiswa Terancam DO","1DPfnKZ_El7HNHHTNuyW8dlOClVNGQlRZ"],["Penawaran dan Jadwal Mata Kuliah","1ndpla5hXOQQAjFUJs9neDea2XDQ7lTQi"],["Penawaran Program","1DdRgV8s8_FRVLAL0COLOskGEoOkfeh5x"],["Pencetakan Ijazah","1XoeBXX_TuXFvLHaqHMA_mEtvS4U1Mf4W"],["Pencetakan Konsep Ijazah","1dgah6vP14NYkBeD7_j_HhKSc5EsnQ_Zj"],["Pencetakan Lampiran Ijazah","1ljnqH9UI-ckTRGoGNIP9XDgglKwihOCN"],["Penentuan Dosen Pengampu","1kAU_hlAHbobQvuSs28DS21DfpPgPnSNn"],["Penerbitan SK Dekan tentang Pemberian Yudisium","1BLzlrMWIcUWm4AhktErlH4suG66_9BfP"],["Penerimaan Mahasiswa Baru Pascasarjana","1Jb0RZTsS1AW_UKOG-I4fHzCKb4vaKQsk"],["Penerimaan Mahasiswa PPA dan MAKSI","17_P9BJMxunAHdZuf9r-3EJPbpX1quSzL"],["Penetapan Dosen Koordinator","1X_DwLLlfXQrwuSxVjsx5E-Qe83aXHuaT"],["Penetapan Dosen MKU","1Q63yWb9MkJq4yBJl_uSglk6HXSeie8Uw"],["Pengadaan Bahan Pustaka","1u_v-hve1P--431cUrxlGUQaHy951rGfF"],["Pengajuan Cuti Akademik","19kcviXLA_VvUUt_5YZr7BxC570Et7_eT"],["Pengambilan Ijazah","1_PhM9Xwgc-R3ODenUl-m3RkoMVcTFihI"],["Pengambilan Ijazah (salinan)","18dhsgPXBwwNRvJZ_fsd5obP69kge3JBJ"],["Pengarsipan Berkas","1Cd4XC13eVqFRBT09Gt0KWg1F7p8arLmH"],["Pengelolaan Alat dan Bahan Laboratorium (FK)","1rYg5Y8XY-_DFP-3Yyk8Uys4iTeVv0_BO"],["Pengelolaan K3 Laboratorium (FK)","1Lv65vpDfFagE4k8g58TAe_EipKfLsWTH"],["Pengelolaan Pelatihan di Laboratorium Komputer (FE)","16-lSAZovLWqha-H4QNW93enGCG0dHASW"],["Pengelolaan Pembelajaran","195Qtk-U00VNG5xu90-yx0OmZpKt1XqQI"],["Pengelolaan Pembelajaran (BAA)","1VCF6rn6brHOhxbz4h78Mo76F43ChZSwO"],["Pengembalian Buku","19NEaCHYxhsocTsVHnv00zUzoQavb0Ihq"],["Penghapusan Mata Kuliah","1PDsd17ho106TsM7Ku_6_8-CDpgj9WZGp"],["Pengolahan Bahan Pustaka","1JKaTa1ZRLmCkp9qm7QmYJiZz7PcBo4bU"],["Penyerahan Tugas Akhir Mahasiswa (Perpus)","1oBvZkaRvskH3HZHWcj4aMuP8gehMRspy"],["Penyusunan Jadwal Penggunaan Ruang Kuliah","1_MW4u9DXs5gOgZbwum8DPC37lEXm8lWy"],["Penyusunan Jadwal Perkuliahan","1C5htltz-P3J26DzmyK-efygwdC-YaOqw"],["Perbaikan Jadwal Perkuliahan dan KSM","1BZYDRZJLDgSU6olQ4rp50Rdmh7U5Cm_j"],["Perekrutan dan Pengangkatan Asisten Mahasiswa","16YC7Fy7UJVnwcrT2YUIpopWV5ioFcgms"],["Perencanaan Perkuliahan dan Formasi Dosen MKU","1HEMRKdQe1o4CAUnjnspUa0h7vCBO-hw4"],["Permintaan Data","1H2NB9k0ABpi4jFD4ghR4Cvu6mNnqTief"],["Permohonan Kunjungan ke Perpustakaan FE (PPA dan MAKSI)","17HfVXTx1_vY9Kpu5Uxceb9NzK92JciBO"],["Permohonan Surat Pengantar Riset","16u_zthQ65vZBfHBLdEoJqDwcuPim7R6_"],["Persiapan Dokumen Pendukung Perkuliahan","1ww-1mwgTzAUMrSAKh3wSt5AVAH17Ovxo"],["Persiapan Perkuliahan Laboratorium (FE)","19FXo_iRDVIzOy1w5tVEhmYzQ-q71G7n0"],["Promosi PPA dan MAKSI (FE)","19Cpi9cEcLojlBDSIE5BpV3fabtHbot0j"],["Proses Administrasi Surat Akademik","1_04LcHhGDXPckaXhbO01ODJf4V_Gx_C8"],["Proses Kuliah Pengganti","1c65k_Fm-hA5SsQaxBGQsH4D4CKJIdpF1"],["Proses Kuliah Pengganti (salinan)","1OmgQqe1hIJl4vU9Xf8Rs0mlCpVhreY8Z"],["Proses Pengelolaan Jurnal (FK)","1c5HrMakIn03bhHQ_VzsKo-Kc6Iy_Uc6r"],["Proses Pengiriman Data Ijazah ke Biro Adak","1VugPZHHKvXuxyQbSJVGcLSPCKbi9e1Ft"],["Proses Pergantian Dosen atau Dosen Tamu","1IhIj1pyoO5V8PnheKPhFI_2GGqYA6VkE"],["Proses Permohonan Pengurusan Ijazah","1vwNbxarF3w9TZf2nXMIRKd-W9v6uAjjD"],["Rapat Koordinasi (FK)","1e_nJjMDcqclU6WsXlgjsaX6ivr2qDuUx"],["Seleksi Koleksi Skripsi atau Tesis (FPSI dan FE)","1Jjgs_K7vTkiQidfxQHSWD27-YEIAqoCg"],["Seleksi Koleksi Skripsi atau Tesis (FPSI dan FE) (salinan)","1pW_VPMpeK0ybiP9cPcJIpBt7b9UYgtDm"],["SK Penguji Doktor","1IidC3xYBMzUIvkFH1-7uPjDdw3zu1mE0"],["Standarisasi Format Slide Presentase Materi Perkuliahan","1GDx24DMa_QEc2_y8BYQLUWQiDzfFFvK5"],["Undur Diri Mahasiswa","1Keeh_5fMsVwY5mI96Q_fMykpTNMPSnde"]])),
+BD("AKADEMIK · 05. Penilaian Pembelajaran","1jBk9bJox-VpM9G_A8UtPA3QoGJaKTkgR",F([["Pelaksanaan Ujian (MKU)","1Zr1WpMuxigDdk30dilCenzm5GUZakhj-"],["Pelaksanaan Ujian Keterampilan Dasar (Klinik Dasar OSCE) (FK)","1Xrp0XQLKhzVJu2mqX4hHnNAXOhcgDekA"],["Pelaksanaan UK MPPD (Uji Kompetensi Mahasiswa Program Profesi Dokter)","1S_31J5AU2t0tg_MC8NX9oZ-Ab-fLPVZ2"],["Pengolahan Nilai Ujian (MKU)","1Ie4p2kNB7DLFTEC26oXb1aZ0Rs31eZhp"],["Penilaian Magang atau Kerja Praktek","1LZnpVp0PLSbO-uWLh2IK_Vc9Huxe7WZd"],["Penilaian Pembelajaran","1563X9SK3wRMPh6xexodWYiIbrfMFpLZ7"],["Penilaian PKPP UTS dan UAS (FPSI)","1-Juo3y-3j6VnEGYX5kakH-zH9YGVs385"],["Penyusunan dan Pelaksanaan Sidang Proposal Skripsi","1DWTDNlvhd6KLmmpP6ANrB_o5Xu1HtE7s"],["Penyusunan dan Pelaksanaan Sidang Proposal Skripsi (salinan)","1YqyxQhoEwjsTXmo0xPI346Uy02kKFFaI"],["Persiapan Soal UTS atau UAS","1ULzWh5D2iEBYIueJLxqUbBXR3aWE0Dwo"],["Persiapan Ujian UTS atau UAS","166JkO-kJhU-RqdqvzL6ijteymHdHh_ml"],["Proses Nilai dan Kartu Hasil Studi (KHS)","15fCIYGRvmo0OBQsVT_ybVKFxPjBznnWw"],["Proses Pengolahan dan Penyerahan Nilai","10mtigvwMZ1Of9ki2vGChfmieL9tsqYvJ"],["Proses Pengolahan dan Penyerahan Nilai (salinan)","1gDPoQNJ802UgEE8bQsKy-3k85NFtQDfe"],["Seminar Hasil Penelitian Disertasi","1D85_mwGnwwo40YQo7Da2GKPQjDxETxGX"],["Seminar Hasil Penelitian Disertasi (salinan)","1Cs0M2ApS9mEEz_gXpb6g-SsYfjhFAQwk"],["Sidang Skripsi atau Tugas Akhir","1IDeCS9yWiz2Fa1Rs4HyMS11K7VsQWzk5"],["Sidang Terbuka (Promosi Doktor)","1Ex1Uiqrv9FYWxxcigWlaUnaWU7LgLaLW"],["Sidang Tertutup (Disertasi)","1Nhi_XJNx0aqb-Fz2D-43WB2uhndN8YhV"],["Sidang Tesis","1RMz1bOSbP1qBnFzxXNe_Wj6NbvAKzZXN"],["Ujian HIMPSI (FPSI)","15gEzT4Nhldgl6ZZGXzJ5zGQD2GHuSfGy"],["Ujian Tulis (FK)","1HAwFUhUOHlmnwqFMIE6tFqL7tvBdGSkk"],["Ujian UTS atau UAS","1jU6j22LoqWrvDZ-uG-ZL75lOvfKVhXPY"]])),
+BD("NON AKADEMIK · 06. Pembiayaan Pembelajaran","1PXeiznFVleDY8A8R8Yv-KXQ8fnLBK2ej",F([["Pembiayaan Pembelajaran","15ToBUGAbR9OQOhV5UHufpfNBnroCYkul"]])),
+BD("NON AKADEMIK · 07. Dosen & Tendik","1DoyyPg6-3aFwvoTXFiOHLkmRl-xCJmhP",F([["Dosen dan Tenaga Kependidikan (salinan)","1WkbR-TYXJAoJfx7DPbFGmBO8GgtXV88B"]])),
+BD("NON AKADEMIK · 08. Sarana & Prasarana","1j9zkdPU5_9Di2E9e9bxkv4Et3AJJstxg",F([["Sarana dan Prasarana Pembelajaran","1PsoHIsg-3uAoc7dkS7FKVyGyj7v0VpLz"]]))]},
+{id:"fm",c:"#a06a00",name:"Dokumen Formulir",b:[]},
+{id:"de",c:"#c2571a",name:"Dokumen Eksternal",b:[]},
+{id:"di",c:"#0e7490",name:"Dokumen Internal",b:[]},
+{id:"dt",c:"#b0273f",name:"Dokumen Terkendali",b:[]}
+];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ok=u=>/^https?:\/\//i.test(u||"");
+let S,tab,edit=false,q="";const open=new Set();
+try{const x=localStorage.getItem(K);if(x)S=JSON.parse(x)}catch(e){}
+if(!Array.isArray(S)||!S.length)S=seed();
+tab=S[0].id;
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+const cur=()=>S.find(t=>t.id===tab)||S[0];
+const tcol=x=>/^#[0-9a-f]{6}$/i.test(x.c||"")?x.c:({pd:"#7a3fb0",st:"#16794a",pr:"#1f5fbf",fm:"#a06a00",de:"#c2571a",di:"#0e7490",dt:"#b0273f"}[x.id]||"#1f5fbf");
+const onc=h=>{const n=parseInt(h.slice(1),16);return (0.299*(n>>16)+0.587*(n>>8&255)+0.114*(n&255))>165?"#111":"#fff"};
+function render(){
+ const t=cur(),ql=q.trim().toLowerCase();
+ $(".w").style.setProperty("--tc",tcol(t));$(".w").style.setProperty("--on",onc(tcol(t)));$("#tc").value=tcol(t);
+ $("#tabs").innerHTML=S.map(x=>`<button class="${x.id===tab?"on":""}" style="--tc:${tcol(x)}" data-a="tab" data-id="${esc(x.id)}"><i class="dot" style="background:${tcol(x)}"></i>${esc(x.name)}</button>`).join("");
+ let tot=0,lk=0;t.b.forEach(b=>b.items.forEach(i=>{tot++;if(ok(i.u))lk++}));
+ const pc=tot?Math.round(lk/tot*100):0;
+ $("#stats").innerHTML=`<div class="st"><b>${t.b.length}</b><span>Bidang</span></div><div class="st"><b>${tot}</b><span>Item dokumen</span></div><div class="st"><b>${lk}</b><span>Sudah ada link (${pc}%)</span><div class="pr"><i style="width:${pc}%"></i></div></div>`;
+ let h="";
+ t.b.forEach((b,bi)=>{
+  const bm=!ql||b.n.toLowerCase().includes(ql);
+  const its=b.items.map((it,ii)=>({it,ii})).filter(o=>bm||(o.it.g+" "+o.it.t).toLowerCase().includes(ql));
+  if(ql&&!its.length)return;
+  const key=tab+bi,isOpen=open.has(key)||ql;
+  let li="",pg=null;
+  its.forEach(({it,ii})=>{
+   if(edit){li+=`<li class="ed"><input class="ig" data-f="ig" data-b="${bi}" data-i="${ii}" value="${esc(it.g)}" placeholder="Kelompok (opsional)"><input class="it" data-f="it" data-b="${bi}" data-i="${ii}" value="${esc(it.t)}"><input class="iu" data-f="iu" data-b="${bi}" data-i="${ii}" value="${esc(it.u)}" placeholder="https://link-dokumen"><button class="x" data-a="di" data-b="${bi}" data-i="${ii}" title="Hapus">✕</button></li>`;return}
+   if(it.g&&it.g!==pg)li+=`<li class="g">${esc(it.g)}</li>`;pg=it.g;
+   li+=`<li><span class="t">${esc(it.t)}</span>${ok(it.u)?`<a class="go" href="${esc(it.u)}" target="_blank" rel="noopener">Buka ↗</a>`:`<span class="no">Belum ada link</span>`}</li>`;
+  });
+  const head=edit?`<div class="hd ed"><input data-f="bn" data-b="${bi}" value="${esc(b.n)}" placeholder="Nama bidang"><input data-f="bu" data-b="${bi}" value="${esc(b.u)}" placeholder="Link utama bidang (folder)"><button class="x" data-a="db" data-b="${bi}">Hapus bidang</button></div>`
+   :(ok(b.u)?`<a class="go big" href="${esc(b.u)}" target="_blank" rel="noopener">Buka folder bidang ↗</a>`:"");
+  const n=b.items.filter(i=>ok(i.u)).length;
+  h+=`<details data-k="${key}" ${isOpen?"open":""}><summary><span>${esc(b.n)}</span><small>${n}/${b.items.length} link</small></summary><div class="bd">${head}<ul>${li||`<li><span class="t" style="color:var(--mu)">Belum ada item. Klik Mode Edit untuk menambah.</span></li>`}</ul>${edit?`<button class="add" data-a="ai" data-b="${bi}">+ Tambah item</button>`:""}</div></details>`;
+ });
+ $("#grid").innerHTML=h||`<div class="empty">${t.b.length?`Tidak ada hasil untuk “${esc(q)}”.`:"Belum ada dokumen di tab ini. Klik Mode Edit untuk menambah bidang dan dokumen."}</div>`;
+ $("#ab").style.display=edit?"":"none";
+ $("#be").classList.toggle("on",edit);$("#be").textContent=edit?"✓ Selesai Edit":"✎ Mode Edit";
+}
+document.addEventListener("click",e=>{
+ const el=e.target.closest("[data-a]");if(!el)return;
+ const a=el.dataset.a,b=+el.dataset.b,i=+el.dataset.i,t=cur();
+ if(a==="tab"){tab=el.dataset.id}
+ else if(a==="ai"){const it=t.b[b].items;it.push({g:it.length?it[it.length-1].g:"",t:"Item baru",u:""});open.add(tab+b)}
+ else if(a==="di"){t.b[b].items.splice(i,1)}
+ else if(a==="db"){t.b.splice(b,1);open.clear()}
+ else return;
+ save();render();
+});
+document.addEventListener("change",e=>{
+ const f=e.target.dataset.f;if(!f)return;
+ const b=+e.target.dataset.b,i=+e.target.dataset.i,bd=cur().b[b];let v=e.target.value.trim();
+ if(f==="bn")bd.n=v;
+ else if(f==="bu"||f==="iu"){if(v&&!/^https?:\/\//i.test(v))v="https://"+v;e.target.value=v;if(f==="bu")bd.u=v;else bd.items[i].u=v}
+ else if(f==="it")bd.items[i].t=v;else if(f==="ig")bd.items[i].g=v;
+ save();
+});
+document.addEventListener("toggle",e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){e.target.open?open.add(k):open.delete(k)}},true);
+$("#q").addEventListener("input",e=>{q=e.target.value;render()});
+$("#be").onclick=()=>{edit=!edit;render()};
+$("#tc").addEventListener("input",e=>{cur().c=e.target.value;save();render()});
+$("#ab").onclick=()=>{cur().b.push({n:"BIDANG BARU",u:"",items:[{g:"",t:"Item baru",u:""}]});open.add(tab+(cur().b.length-1));save();render()};
+$("#bk").onclick=()=>{$("#ta").value=JSON.stringify(S);$("#dlg").showModal()};
+$("#cl").onclick=()=>$("#dlg").close();
+$("#cp").onclick=()=>{$("#ta").select();try{navigator.clipboard.writeText($("#ta").value)}catch(e){document.execCommand("copy")}};
+$("#sd").onclick=()=>{$("#ta").value=JSON.stringify(seed())};
+$("#ap").onclick=()=>{try{const d=JSON.parse($("#ta").value);if(!Array.isArray(d)||!d.length)throw 0;S=d;tab=S[0].id;open.clear();save();render();$("#dlg").close()}catch(e){$("#ta").value="Data tidak valid. Tempel data hasil Backup."}};
+render();
+</script>
+</body>
+</html>
